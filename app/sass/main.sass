@@ -82,21 +82,20 @@ li
 	display: flex
 	flex-direction: column
 	height: 88%
-	width: 85%
+	width: 88%
 	float: right
 
 header
 	width: 100%
-	height: 100px
+	height: 70px
 	float: right
-	//flex-basis: 20%
-
 
 aside
-	width: 15%
+	width: 12%
 	height: 88%
-	background-color: rgba(108,101,109,.5)
-	padding-top: 30px
+	//background-color: rgba(darken($gray, 40), .6)
+	background-color: rgba(black, .6)
+	padding-top: 20px
 	text-align: center
 
 main
@@ -111,10 +110,15 @@ footer
 	background-color: $red
 	color: #eee
 	font-family: "raleway", sans-serif
+	border: 0 solid black
+	display: flex
+	flex-direction: row
+	justify-content: space-around
 
 footer
-	h3
+	h3,p
 		float: left
+		margin: 0
 
 //=============================================//
 
@@ -122,14 +126,14 @@ footer
 //================================================//
 
 header
-	background-color: rgba(black, .6)
+	//background-color: rgba(black, .6)
 	//background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 20%, rgba(0,0,0,0) 100%)
-	//background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 20%,rgba(0,0,0,0) 100%)
+	background: -webkit-linear-gradient(225deg, rgba(0,0,0,0.65) 20%,rgba(0,0,0,0) 100%)
 	//background: linear-gradient(to bottom, rgba(0,0,0,0.65) 20%,rgba(0,0,0,0) 100%)
 	//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 )
 	nav
 		width: 100%
-		height: 100px
+		height: 70px
 		padding:
 			left: 50px
 			right: 50px
@@ -146,7 +150,7 @@ header
 			display: block
 			height: 100%
 			width: 100%
-			line-height: 100px
+			line-height: 70px
 			font-family: "raleway", sans-serif
 			font-weight: 300
 			font-size: 1.7em
@@ -154,5 +158,126 @@ header
 			text-align: center
 			&:hover
 				color: $redOnBlack
+
+// Footer
+//===================================================//
+
+.footer-wrapper
+	display: flex
+	flex-direction: row
+	justify-content: space-around
+	width: 100%
+	p,h3
+		align-self: center
+	h3
+		font-size: 2.4em
+		font-weight: 100
+		text-shadow: 0 2px 5px #000
+	p
+		position: relative
+		font-size: 2em
+		font-weight: 400
+		line-height: 54px
+		color: $red
+		background-color: white
+		padding:
+			left: 15px
+			right: 15px
+		border: 1px solid white
+		-webkit-border-radius: 35px
+		-moz-border-radius: 35px
+		border-radius: 35px
+		box-shadow: 0 3px 15px -2px rgba(0,0,0,.7)
+		&:hover
+			background-color: $red
+			color: white
+		&::before
+			content: '\f095'
+			position: absolute
+			height: 100%
+			width: 30px
+			top: 2px
+			left: -50px
+			font-family: fontawesome, sans-serif
+			font-size: 1.4em
+			color: white
+			text-shadow: 0 1px 5px rgba(0,0,0,.6)
+
+// Aside Navigation
+//===============================================//
+
+aside
+	h1
+		font-family: "raleway", sans-serif
+		font-weight: 600
+		font-size: 1.4em
+		color: lighten($gray, 15)
+		margin:
+			top: 0
+			left: 0
+			right: 0
+			bottom: 14px
+	hr
+		width: 100%
+		height: 1px
+		background-color: rgba($gray, .5)
+		border: none
+	nav
+		height: 80%
+		ul
+			height: 100%
+			display: flex
+			flex-direction: column
+			justify-content: center
+			#chicken
+				background-image: url(../img/002-chicken.png)
+			#turkey
+				background-image: url(../img/003-turkey-bird-shape-from-side-view.png)
+			#sausage
+				background-image: url(../img/001-packed-sausage.png)
+			.nav-item
+				cursor: pointer
+
+				.item-img
+					width: 60px
+					height: 60px
+					margin: auto
+					background-position: center center
+					-webkit-background-size: contain
+					background-size: contain
+					background-repeat: no-repeat
+					-webkit-transition: all .0s
+					-moz-transition: all .0s
+					-o-transition: all .0s
+					transition: all .0s
+				h1
+					color: lighten($gray, 20)
+					font-size: 1.2em
+					font-weight: 300
+					margin-bottom: 2px
+					-webkit-transition: all .0s
+					-moz-transition: all .0s
+					-o-transition: all .0s
+					transition: all .0s
+				img
+					width: 30%
+					height: 30%
+				&:hover
+					h1
+						color: lighten($red, 15)
+					#chicken
+						background-image: url(../img/002-chicken-red.png)
+					#turkey
+						background-image: url(../img/003-turkey-bird-shape-from-side-view-red.png)
+					#sausage
+						background-image: url(../img/001-packed-sausage-red.png)
+		hr
+			width: 120px
+			height: 1px
+			border: none
+			background-color: rgba($gray, .4)
+			margin:
+				top: 10px
+				bottom: 30px
 
 @import "media" // Всегда в конце
