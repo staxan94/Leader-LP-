@@ -27,13 +27,8 @@ gulp.task('common-js', function() {
 gulp.task('scripts', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/mmenu/js/jquery.mmenu.all.min.js',
-		'app/libs/owl.carousel/owl.carousel.min.js',
-		'app/libs/fotorama/fotorama.js',
-		'app/libs/selectize/js/standalone/selectize.min.js',
-		'app/libs/equalHeights/equalheights.js',
-		'app/libs/bootstrap-4-full/dist/js/bootstrap.min.js',
-		'app/js/common.min.js', // Всегда в конце
+		'app/libs/owl.carousel/owl.carousel.js',
+		'app/js/common.min.js' // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Минимизировать весь js (на выбор)
